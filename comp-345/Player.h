@@ -1,17 +1,17 @@
 #pragma once
 using namespace std;
 #include <string>
+#include "Map.h"
 #include "Orders.h"
 #include "Cards.h"
-#include "Map.h"
 
 #include <vector>
 
-class Order;
 class Card;
 class OrderList;
 class Hand;
 class Territory;
+class Order;
 
 class Player {
 public:

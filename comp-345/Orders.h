@@ -2,13 +2,12 @@
 #include <vector>
 #include <string>
 using namespace std;
-#include "Player.h"
 #include "Map.h"
+#include "Player.h"
 
 class Player;
 class Territory;
 class Map;
-
 class Order{
     public:
         Order();
@@ -45,8 +44,8 @@ class AdvanceOrder : public Order{
     public:
         AdvanceOrder(Player* player, int armies, Territory* source, Territory* destination);
         ~AdvanceOrder();
-        AdvanceOrder& operator=(const AdvanceOrder& advanceOrder);
         AdvanceOrder(const AdvanceOrder& advanceOrder);
+        AdvanceOrder& operator=(const AdvanceOrder& advanceOrder);
         bool validate();
         bool execute();
     private:
@@ -57,8 +56,8 @@ class AdvanceOrder : public Order{
 class BombOrder : public Order{
     public:
         BombOrder(Player* player, Territory* destination);
-        BombOrder(const BombOrder& bombOrder);
         BombOrder& operator=(const BombOrder& bombOrder);
+        BombOrder(const BombOrder& bombOrder);
         ~BombOrder();
         bool validate();
         bool execute();

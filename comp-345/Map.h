@@ -13,25 +13,10 @@
 #include <iostream>
 #include <vector>
 #include "Player.h"
-
 using namespace std;
 class Player;                   // forward declaration to avoid Circular Dependencies 
 //class Order;
 //class OrderList;
-//class Card;
-
-
-/*  //dummy class
-class Player
-{
-public:
-    string name;
-    Player();
-    Player(string name);
-    ~Player();
-    void setPlayerName(string s);
-};
-*/
 // Territory
 
 class Territory
@@ -97,7 +82,7 @@ class Map
 {
 public:
     Map();                                                                                // default constructor
-    Map(string mapName, vector<Continent *> continents); // param constructor
+    Map(string mapName, vector<Territory *> territories, vector<Continent *> continents); // param constructor
     Map(const Map &map);                                                                  // copy constructor
     ~Map();
     Map &operator=(const Map &map);                              // assignment operator
@@ -105,6 +90,7 @@ public:
 
     // member functons
     string getMapName();
+    // vector<Territory*> getAllTerritories();
     vector<Continent *> getAllContinents();
     bool validate(); // check if map is valid
     Territory *findTerritory(int id);
@@ -134,7 +120,6 @@ public:
     ~MapLoader();
     string FileContents;
     string FileName;
-    bool isbadFile;
     Map *map;
     void SplitString(string s, vector<string> &v);
 };
