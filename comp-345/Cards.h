@@ -14,6 +14,7 @@
 #include "Player.h"
 using namespace std;
 
+class Order;
 class Player;
 class Deck;
 /*
@@ -66,6 +67,7 @@ class OrderList{
         vector <Order*> orderList;
 };
 */
+
 class Card{
     public:
         Card(string type);
@@ -80,6 +82,19 @@ class Card{
     private:
         string type;
         Player* player;
+};
+
+class Hand{
+    public:
+        Hand();
+        Hand(const Hand& hand);
+        vector <Card*> getHand();
+        void push(Card* card);
+        void remove(Card* card);
+        void fill(Deck* deck);
+        friend std::ostream& operator << (ostream& out,const Hand& h);
+    private:
+        vector <Card*> hand;
 };
 
 class Deck {
@@ -97,20 +112,6 @@ public:
 private:
     vector <Card*> deck;
 };
-
-class Hand{
-    public:
-        Hand();
-        Hand(const Hand& hand);
-        vector <Card*> getHand();
-        void push(Card* card);
-        void remove(Card* card);
-        void fill(Deck* deck);
-        friend std::ostream& operator << (ostream& out,const Hand& h);
-    private:
-        vector <Card*> hand;
-};
-
 
 
 

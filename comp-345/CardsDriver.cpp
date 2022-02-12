@@ -2,14 +2,14 @@
 // filled by drawing cards from the deck, then calls the play method of all cards in the hand.
 #include <iostream>
 #include "Cards.h"
+#include "Player.h"
+/*
 int main() {
-    cout << "hey" <<endl;
-    /*
+    
     Player* player1 = new Player("Mark");
     Deck* deck = new Deck();
     Hand* newHand = new Hand();
     string cardInput;
-    
     deck->initalizeDeck();
     cout << "INITIAL DECK SIZE: " << deck->getDeck().size() << endl;
     player1->setHand(newHand);
@@ -45,5 +45,5 @@ int main() {
     cout << "~~~HAND SIZE~~~: " << player1->hand->getHand().size() << endl;
     cout << "------------------------\n";
     cout << player1->name << "'s OrderList: \n" << *player1->orders;
-    */
-}
+
+}*/
